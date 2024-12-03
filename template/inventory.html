@@ -13,8 +13,6 @@
 <body class="bg-blue-100" >
         <h1 class="text-center font-bold text-3xl font-blue bg-blue-300">Inventory Management System  </h1>
 
-        
-    
 <div class="flex">
     <div class="w-60 p-4 bg-gray-600 h-screen">
         <h1 class="text-3xl text-center mt-4 mb-8 font-bold flex items-center space-x-2">
@@ -22,8 +20,8 @@
         </h1>
         <ul class="space-y-4 text-2xl text-bold text-white">
             <li><a href="../template/dashoard/ds.html" >Dashboard</a></li>
-            <li><a href="template/inventory.html" >Inventory</a></li>
-            <li><a href="#" >Purchase</a></li>
+            <li><a href="inventory.html" >Inventory</a></li>
+            <li><a href="../template/purchase.html" >Purchase</a></li>
             <li><a href="#" >Sales</a></li>
             <li><a href="#" >Supplier</a></li>
             <li><a href="#" >Report</a></li>
@@ -31,12 +29,11 @@
         </ul>
         
     </div>
-
     <div class="container mx-auto p-6">
         <h1 class="text-4xl font-bold text-center text-blue-600 mb-6">Inventory List</h1>
 
         <!-- Inventory Table -->
-        <table class="min-w-full table-auto bg-white shadow-md rounded-lg overflow-hidden">
+        <table class="min-w-full table-auto bg-white shadow-md rounded-lg overflow-hidden" id="inventory-table">
             <thead class="bg-blue-600 text-white">
                 <tr>
                     <th class="py-2 px-4 text-left">Item Name</th>
@@ -47,52 +44,48 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Example Item 1 -->
                 <tr class="hover:bg-gray-100">
                     <td class="py-2 px-4">Apple</td>
                     <td class="py-2 px-4">50</td>
-                    <td class="py-2 px-4">Rs. 10.00</td>
-                    <td class="py-2 px-4">Rs. 500.00</td>
+                    <td class="py-2 px-4">Rs. 1.00</td>
+                    <td class="py-2 px-4">Rs. 50.00</td>
                     <td class="py-2 px-4 text-center">
-                        <button class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Edit</button>
+                        <button class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 edit-btn" onclick="editItem(this)">Edit</button>
                         <button class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 ml-2">Delete</button>
                     </td>
                 </tr>
-                <!-- Example Item 2 -->
-                <tr class="hover:bg-gray-100">
-                    <td class="py-2 px-4">Banana</td>
-                    <td class="py-2 px-4">30</td>
-                    <td class="py-2 px-4">Rs. 10</td>
-                    <td class="py-2 px-4">Rs. 300</td>
-                    <td class="py-2 px-4 text-center">
-                        <button class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Edit</button>
-                        <button class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 ml-2">Delete</button>
-                    </td>
-                </tr>
-                <!-- Example Item 3 -->
-                <tr class="hover:bg-gray-100">
-                    <td class="py-2 px-4">Orange</td>
-                    <td class="py-2 px-4">100</td>
-                    <td class="py-2 px-4">$0.60</td>
-                    <td class="py-2 px-4">$60.00</td>
-                    <td class="py-2 px-4 text-center">
-                        <button class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Edit</button>
-                        <button class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 ml-2">Delete</button>
-                    </td>
-                </tr>
+                <!-- More items can go here -->
             </tbody>
         </table>
 
-        <!-- Add New Item Button -->
-        <div class="mt-6 text-center">
-            <button class="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600">
-                Add New Item
-            </button>
+        <!-- Edit Item Modal (Hidden by default) -->
+        <div id="edit-modal" class="fixed inset-0 bg-gray-700 bg-opacity-50 flex justify-center items-center hidden">
+            <div class="bg-white p-6 rounded-lg w-1/3">
+                <h2 class="text-xl font-bold mb-4">Edit Item</h2>
+                <form id="edit-form">
+                    <div class="mb-4">
+                        <label for="item-name" class="block text-gray-700">Item Name</label>
+                        <input type="text" id="item-name" class="w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div class="mb-4">
+                        <label for="item-quantity" class="block text-gray-700">Quantity</label>
+                        <input type="number" id="item-quantity" class="w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div class="mb-4">
+                        <label for="item-price" class="block text-gray-700">Price</label>
+                        <input type="text" id="item-price" class="w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded-md mr-2" onclick="closeModal()">Cancel</button>
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Save</button>
+                    </div>
+                </form>
+            </div>
         </div>
+
     </div>
-    
-</div>
 
     
 </body>
 </html>
+<script src="../script/login/iv.js"></script>
