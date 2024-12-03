@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+        <title>Inventory System</title>
+    </head>
+<body class="bg-blue-100" >
+        <h1 class="text-center font-bold text-3xl font-blue bg-blue-300">Inventory Management System  </h1>
+
+        
+    
+<div class="flex">
+    <div class="w-60 p-4 bg-gray-600 h-screen">
+        <h1 class="text-3xl text-center mt-4 mb-8 font-bold flex items-center space-x-2">
+            <i class="fas fa-box"></i> <span>INVENTORY</span>
+        </h1>
+        <ul class="space-y-4 text-2xl text-bold text-white">
+            <li><a href="../template/dashoard/ds.html" >Dashboard</a></li>
+            <li><a href="template/inventory.html" >Inventory</a></li>
+            <li><a href="#" >Purchase</a></li>
+            <li><a href="#" >Sales</a></li>
+            <li><a href="#" >Supplier</a></li>
+            <li><a href="#" >Report</a></li>
+            <li><a href="#" >Document</a></li>
+        </ul>
+        
+    </div>
+
+    <div class="container mx-auto p-6">
+        <h1 class="text-4xl font-bold text-center text-blue-600 mb-6">Inventory List</h1>
+
+        <!-- Inventory Table -->
+        <table class="min-w-full table-auto bg-white shadow-md rounded-lg overflow-hidden">
+            <thead class="bg-blue-600 text-white">
+                <tr>
+                    <th class="py-2 px-4 text-left">Item Name</th>
+                    <th class="py-2 px-4 text-left">Quantity</th>
+                    <th class="py-2 px-4 text-left">Price</th>
+                    <th class="py-2 px-4 text-left">Total Value</th>
+                    <th class="py-2 px-4 text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example Item 1 -->
+                <tr class="hover:bg-gray-100">
+                    <td class="py-2 px-4">Apple</td>
+                    <td class="py-2 px-4">50</td>
+                    <td class="py-2 px-4">Rs. 10.00</td>
+                    <td class="py-2 px-4">Rs. 500.00</td>
+                    <td class="py-2 px-4 text-center">
+                        <button class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Edit</button>
+                        <button class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 ml-2">Delete</button>
+                    </td>
+                </tr>
+                <!-- Example Item 2 -->
+                <tr class="hover:bg-gray-100">
+                    <td class="py-2 px-4">Banana</td>
+                    <td class="py-2 px-4">30</td>
+                    <td class="py-2 px-4">Rs. 10</td>
+                    <td class="py-2 px-4">Rs. 300</td>
+                    <td class="py-2 px-4 text-center">
+                        <button class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Edit</button>
+                        <button class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 ml-2">Delete</button>
+                    </td>
+                </tr>
+                <!-- Example Item 3 -->
+                <tr class="hover:bg-gray-100">
+                    <td class="py-2 px-4">Orange</td>
+                    <td class="py-2 px-4">100</td>
+                    <td class="py-2 px-4">$0.60</td>
+                    <td class="py-2 px-4">$60.00</td>
+                    <td class="py-2 px-4 text-center">
+                        <button class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Edit</button>
+                        <button class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 ml-2">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Add New Item Button -->
+        <div class="mt-6 text-center">
+            <button class="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600">
+                Add New Item
+            </button>
+        </div>
+    </div>
+    
+</div>
+
+    
+</body>
+</html>
