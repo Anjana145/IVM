@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+        <title>Inventory System</title>
+    </head>
+<body class="bg-blue-100" >
+        <h1 class="text-center font-bold text-3xl font-blue bg-blue-300">Inventory Management System  </h1>
+
+        <div class="flex">
+            <div class="w-60 p-4 bg-gray-600 h-screen">
+                <h1 class="text-3xl text-center mt-4 mb-8 font-bold flex items-center space-x-2">
+                    <i class="fas fa-box"></i> <span>INVENTORY</span>
+                </h1>
+                <ul class="space-y-4 text-2xl text-bold text-white">
+                    <li><a href="../template/dashoard/ds.html" >Dashboard</a></li>
+                    <li><a href="../template/inventory.html" >Inventory</a></li>
+                    <li><a href="../template/purchase.html" >Purchase</a></li>
+                    <li><a href="../template/sales.html" >Sales</a></li>
+                    <li><a href="../template/supplier.html" >Supplier</a></li>
+                    <li><a href="../template/report.html" >Report</a></li>
+                    <li><a href="document.html" >Document</a></li>
+                </ul>
+                
+            </div>
+
+    <div class="container mx-auto p-6">
+        <!-- Section Header -->
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-bold text-blue-600">Document Management</h1>
+            <p class="text-lg text-gray-700 mt-2">Upload, manage and view your documents</p>
+        </div>
+
+        <!-- Add Document Button -->
+        <div class="flex justify-center mb-6">
+            <button onclick="openUploadModal()" class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-600">
+                Upload Document
+            </button>
+        </div>
+
+        <!-- Document Table -->
+        <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+            <thead class="bg-blue-600 text-white">
+                <tr>
+                    <th class="py-2 px-4 text-left">Document Name</th>
+                    <th class="py-2 px-4 text-left">Uploaded By</th>
+                    <th class="py-2 px-4 text-left">Date Uploaded</th>
+                    <th class="py-2 px-4 text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody id="document-table-body">
+                <!-- Documents will be added here -->
+            </tbody>
+        </table>
+
+        <!-- Upload Document Modal (Hidden by default) -->
+        <div id="upload-modal" class="fixed inset-0 bg-gray-700 bg-opacity-50 flex justify-center items-center hidden">
+            <div class="bg-white p-6 rounded-lg w-1/3">
+                <h2 class="text-xl font-bold mb-4">Upload Document</h2>
+                <form id="upload-form">
+                    <div class="mb-4">
+                        <label for="document-name" class="block text-gray-700">Document Name</label>
+                        <input type="text" id="document-name" class="w-full p-2 border border-gray-300 rounded-md" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="uploaded-by" class="block text-gray-700">Uploaded By</label>
+                        <input type="text" id="uploaded-by" class="w-full p-2 border border-gray-300 rounded-md" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="document-file" class="block text-gray-700">Choose Document</label>
+                        <input type="file" id="document-file" class="w-full p-2 border border-gray-300 rounded-md" required>
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded-md mr-2" onclick="closeUploadModal()">Cancel</button>
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../script/document.js"></script>
+    
+</body>
+</html>
